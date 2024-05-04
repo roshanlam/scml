@@ -1,0 +1,7 @@
+torch
+soundfile
+scipy
+transformers
+ffmpeg-python
+djangorestframework
+pytube
