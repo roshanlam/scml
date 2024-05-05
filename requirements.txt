@@ -5,3 +5,4 @@ transformers
 ffmpeg-python
 djangorestframework
 pytube
+drf-spectacular

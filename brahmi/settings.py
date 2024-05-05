@@ -11,7 +11,7 @@ os.makedirs(OUTPUT_DIRECTORY, exist_ok=True)
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-)z9v=^7qasxkt&k!epe4(fd=8uya$js8b!ghjc!#322^fpnk5$"
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -22,6 +22,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'api'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -81,3 +85,10 @@ USE_I18N = True
 USE_TZ = True
 STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+CORS_ORIGIN_ALLOW_ALL = True
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Sociocoders Website API',
+    'DESCRIPTION': 'API for sociocoders.com site',
+    'VERSION': '0.0.1',
+}
